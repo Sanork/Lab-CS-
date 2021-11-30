@@ -4,33 +4,33 @@ using System.Text;
 
 namespace lab5
 {
-     public class Character
-    {
-        private string name; /*Имя*/
-        private int lvl; /*Уровень*/
-        private string race; /*Раса*/
-		public static int count = 0;
+	public class Character
+	{
+		private string name; /*Имя*/
+		private int lvl; /*Уровень*/
+		private string race; /*Раса*/
+		private static int count = 0;
 		private int id;
 		public Guild guild { get; set; }   /*Информация о гильдии*/
-        public Armor arm ; /*Класс брони*/
+		public Armor arm; /*Класс брони*/
 		public Weapon weap; /*Класс оружия*/
 		public Stats stat; /*Класс характеристик*/
 
 		public Character()
-        {
+		{
 			//guild = new Guild();
 			arm = new Armor();
 			weap = new Weapon();
 			stat = new Stats();
-        }
-		public void Init(string characterName, int characterLVL, string characterRace, Armor arm, Weapon weap, Stats st, Resistance res, Guild gld) /*Создание персонажа*/
+		}
+		public void Init(string characterName, int characterLVL, string characterRace, Armor armor, Weapon weapon, Stats stats, Resistance resist, Guild gld) /*Создание персонажа*/
 		{
 			name = characterName;
 			lvl = characterLVL;
 			race = characterRace;
-			arm = arm;
-			weap = weap;
-			stat = st;
+			arm = armor;
+			weap = weapon;
+			stat = stats;
 			guild = gld;
 			count++;
 			id = count;
@@ -45,7 +45,7 @@ namespace lab5
 			Console.WriteLine("Введите расу персонажа\n");
 			race = Console.ReadLine();
 
-		    arm.Input();
+			arm.Input();
 			weap.Input();
 			stat.Input();
 			guild.Input();
@@ -65,6 +65,11 @@ namespace lab5
 			stat.Print();
 			guild.Print();
 		}
+
+		static public int GetCount()
+			{
+			return count;
+			}
 
 	}
 }

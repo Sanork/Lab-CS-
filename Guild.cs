@@ -10,11 +10,11 @@ namespace lab5
 		private int rank;
 		private string spec;
 
-		public void Init(string name, int rank, string spec) /*Функция создания гильдии*/
+		public void Init(string GuildName, int GuildRank, string GuildSpec) /*Функция создания гильдии*/
 		{
-			name = name;
-			rank = rank;
-			spec = spec;
+			name = GuildName;
+			rank = GuildRank;
+			spec = GuildSpec;
 		}
 
 		public void Input() /*Функция создания гильдии вручную с консоли*/
