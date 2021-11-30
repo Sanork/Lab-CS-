@@ -9,6 +9,8 @@ namespace lab5
         private string name; /*Имя*/
         private int lvl; /*Уровень*/
         private string race; /*Раса*/
+		public static int count = 0;
+		private int id;
 		public Guild guild { get; set; }   /*Информация о гильдии*/
         public Armor arm ; /*Класс брони*/
 		public Weapon weap; /*Класс оружия*/
@@ -23,40 +25,45 @@ namespace lab5
         }
 		public void Init(string characterName, int characterLVL, string characterRace, Armor arm, Weapon weap, Stats st, Resistance res, Guild gld) /*Создание персонажа*/
 		{
-			this.name = characterName;
-			this.lvl = characterLVL;
-			this.race = characterRace;
-			this.arm = arm;
-			this.weap = weap;
-			this.stat = st;
-			this.guild = gld;
+			name = characterName;
+			lvl = characterLVL;
+			race = characterRace;
+			arm = arm;
+			weap = weap;
+			stat = st;
+			guild = gld;
+			count++;
+			id = count;
 		}
 
 		public void Input()  /*Создание персонажа вручную с консоли*/
 		{
 			Console.WriteLine("Введите имя персонажа\n");
-			this.name = Console.ReadLine();
+			name = Console.ReadLine();
 			Console.WriteLine("Введите уровень персонажа\n");
-			this.lvl = Convert.ToInt32(Console.ReadLine());
+			lvl = Convert.ToInt32(Console.ReadLine());
 			Console.WriteLine("Введите расу персонажа\n");
-			this.race = Console.ReadLine();
+			race = Console.ReadLine();
 
-		    this.arm.Input();
-			this.weap.Input();
-			this.stat.Input();
-			this.guild.Input();
+		    arm.Input();
+			weap.Input();
+			stat.Input();
+			guild.Input();
+			count++;
+			id = count;
 		}
 
 		public void Print() /*Вывод информации о персонаже*/
 		{
 			Console.WriteLine("Персонаж: ");
-			Console.WriteLine("Имя - " + this.name);
-			Console.WriteLine("Уровень - " + this.lvl);
-			Console.WriteLine("Раса - " + this.race);
-			this.arm.Print();
-			this.weap.Print();
-			this.stat.Print();
-			this.guild.Print();
+			Console.WriteLine("Имя - " + name);
+			Console.WriteLine("ID - " + id);
+			Console.WriteLine("Уровень - " + lvl);
+			Console.WriteLine("Раса - " + race);
+			arm.Print();
+			weap.Print();
+			stat.Print();
+			guild.Print();
 		}
 
 	}

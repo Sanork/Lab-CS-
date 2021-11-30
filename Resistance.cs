@@ -10,27 +10,27 @@ namespace lab5
 
 		public void Init(int resistancePoison, int resistanceFire, int resistanceFrost)   /*Создание*/
 		{
-			this.poison_res = resistancePoison;
-			this.fire_res = resistancePoison;
-			this.frost_res = resistanceFrost;
+			poison_res = resistancePoison;
+			fire_res = resistancePoison;
+			frost_res = resistanceFrost;
 		}
 
 		public void Input()   /*Создание вручную*/
 		{
 			Console.WriteLine("Введите сопротивление яду\n");
-			this.poison_res = Convert.ToInt32(Console.ReadLine());
+			poison_res = Convert.ToInt32(Console.ReadLine());
 			Console.WriteLine("Введите сопротивление огню\n");
-			this.fire_res = Convert.ToInt32(Console.ReadLine());
+			fire_res = Convert.ToInt32(Console.ReadLine());
 			Console.WriteLine("Введите сопротивление холоду\n");
-			this.frost_res = Convert.ToInt32(Console.ReadLine());
+			frost_res = Convert.ToInt32(Console.ReadLine());
 		}
 
 		public void Print()  /*Вывод информации*/
 		{
 			Console.WriteLine("\nСопротивление: ");
-			Console.WriteLine("Сопротивление яду - " + this.poison_res);
-			Console.WriteLine("Сопротивление огню - " + this.fire_res);
-			Console.WriteLine("Сопротивление холоду - " + this.frost_res);
+			Console.WriteLine("Сопротивление яду - " + poison_res);
+			Console.WriteLine("Сопротивление огню - " + fire_res);
+			Console.WriteLine("Сопротивление холоду - " + frost_res);
 		}
 	}
 }
